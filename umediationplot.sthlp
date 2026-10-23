@@ -18,7 +18,8 @@
 
 {pstd}
 {cmd:umediationplot} plots IE(x) and confidence limits from the last
-{help umediation} result at 101 positions over {cmd:e(range)}. The default
+{help umediation} result at 101 positions over the selected data range,
+{cmd:e(range)}. The default
 limits are the simultaneous grid band for pairs inference and the
 joint-region projection band for jackknife inference. Confidence levels
 are nominal; see {help umediation##validation:Validation and interpretation}.

@@ -96,7 +96,7 @@ assert mreldif(J,e(ci))<1e-14 & "`e(classification)'"=="`jc'"
 umediationplot, name(check_projection,replace)
 graph export "validation/output/projection.png", width(1200) replace
 
-* Exposure translation and numeric/string identifiers.
+* Translation of the independent variable and numeric/string identifiers.
 generate double shifted_x=x+3
 umediation y, x(shifted_x) mediator(m) controls(c.z i.category) absorb(firm year) ///
     cluster(firm) at(2 3 4) range(1.5 4.5) inference(jackknife) nodots

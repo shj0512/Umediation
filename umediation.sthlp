@@ -8,13 +8,13 @@
 {viewerjumpto "Options" "umediation##options"}{...}
 {viewerjumpto "Remarks and examples" "umediation##remarks"}{...}
 {viewerjumpto "Stored results" "umediation##results"}{...}
-{viewerjumpto "Methods and references" "umediation##methods"}{...}
+{viewerjumpto "Methods" "umediation##methods"}{...}
 {viewerjumpto "Author and contact" "umediation##author"}{...}
 
 {title:Title}
 
 {p2colset 5 20 22 2}{...}
-{p2col:{bf:umediation} {hline 2}}Mediation with a quadratic exposure-to-mediator relationship{p_end}
+{p2col:{bf:umediation} {hline 2}}Mediation with a quadratic relationship between the independent variable and mediator{p_end}
 {p2colreset}{...}
 
 {marker syntax}{...}
@@ -42,12 +42,13 @@ The command uses built-in Stata and Mata routines; no additional packages are re
 {title:Description}
 
 {pstd}
-{cmd:umediation} fits two least-squares equations with a quadratic exposure-to-mediator
-path and a linear mediator-to-outcome path. It estimates the local indirect effect
-as a function of the exposure, decomposes outcome curvature into mediated and direct
-components, and assesses whether the indirect effect changes sign over a specified
-exposure interval. Both equations use the same complete-case sample, controls,
-and fixed-effect variables. Their control and fixed-effect coefficients may differ.
+{cmd:umediation} fits two least-squares equations. The mediator equation includes
+linear and squared terms of the independent variable; the outcome equation
+includes these terms and the mediator. The command estimates the local indirect
+effect as a function of the independent variable, decomposes outcome curvature
+into mediated and direct components, and assesses sign changes over a specified
+data range. Both equations use the same complete-case sample, controls, and
+fixed-effect variables. Their control and fixed-effect coefficients may differ.
 
 {pstd}
 The default inference method is a pairs bootstrap, resampling observations or
@@ -56,10 +57,10 @@ bootstrap reversal test are also available. {help umediationplot} graphs the
 estimated indirect effect and its confidence limits.
 
 {pstd}
-The model applies to continuous exposure, mediator, and outcome variables, with one
-mediator and one clustering dimension. Estimation is unweighted. Fixed effects
+The independent variable, mediator, and outcome must be continuous. The model
+supports one mediator and one clustering dimension. Estimation is unweighted. Fixed effects
 account for group-specific intercepts; a causal mediation interpretation requires
-additional identification assumptions about exposure, mediator, and outcome errors.
+additional identification assumptions.
 
 {marker options}{...}
 {title:Options}
@@ -67,22 +68,22 @@ additional identification assumptions about exposure, mediator, and outcome erro
 {dlgtab:Model}
 
 {phang}
-{opt x(varname)} specifies the numeric exposure. The command includes its linear
+{opt x(varname)} specifies the numeric independent variable. The command includes its linear
 and squared terms in both equations. This option is required.
 
 {phang}
 {opt mediator(varname)} specifies the numeric mediator. The outcome {it:y},
-exposure, and mediator must be distinct variables. This option is required.
+independent variable, and mediator must be distinct variables. This option is required.
 
 {phang}
 {opt controls(fvvarlist)} specifies common numeric controls and allows
 {help fvvarlist:factor-variable notation}. The list may not contain {it:y},
-the exposure, or the mediator.
+the independent variable, or the mediator.
 
 {phang}
 {opt absorb(varlist)} specifies categorical fixed-effect identifiers, which may
 be numeric or string. The first is absorbed using {help areg}; additional fixed
-effects enter as indicators. The list may not contain {it:y}, the exposure,
+effects enter as indicators. The list may not contain {it:y}, the independent variable,
 or the mediator.
 
 {phang}
@@ -92,24 +93,24 @@ clusters are relabeled for each sampled copy. At least two clusters are required
 jackknife inference requires at least three. These are computational requirements.
 Inference assumes independent clusters and allows dependence within clusters.
 
-{dlgtab:Exposure positions and research interval}
+{dlgtab:Evaluation values and data range}
 
 {phang}
-{opt at(numlist)} specifies literal exposure values at which local indirect effects
+{opt at(numlist)} specifies values of the independent variable at which local indirect effects
 are reported. {opt atpercentiles(numlist)} instead specifies sample percentiles;
 the default is {cmd:atpercentiles(5 25 50 75 95)}. The two options are mutually
 exclusive. At most 100 positions are allowed.
 
 {phang}
 {opt range(numlist)} specifies two distinct endpoints {it:L} and {it:U} of the
-research interval. {opt rangepercentiles(numlist)} instead specifies two sample
+data range. {opt rangepercentiles(numlist)} instead specifies two sample
 percentiles; the default is {cmd:rangepercentiles(5 95)}. The two options are
 mutually exclusive. Percentile arguments must lie strictly between 0 and 100.
 
 {phang}
-Exposure positions and endpoints are sorted and must lie within the observed
-exposure support in the estimation sample. They are determined once and held
-fixed in all bootstrap draws and cluster deletions. The research interval
+Evaluation values and endpoints are sorted and must lie within the observed
+support of the independent variable in the estimation sample. They are determined once and held
+fixed in all bootstrap draws and cluster deletions. The selected data range
 defines the region assessed for reversal; it does not restrict the estimation
 sample. Positions specified in {cmd:at()} may lie outside that interval.
 
@@ -215,7 +216,7 @@ The local indirect effect is IE(x)=b*(a1+2*a2*x). Its slope with respect to x
 is the mediated curvature kappa_m=2*a2*b. Direct and total curvature are
 kappa_d=2*c2 and kappa_t=kappa_m+kappa_d. The change in the indirect effect
 over the interval is delta_ie=(U-L)*kappa_m. The parameter eta=a1*b is
-IE(0), even when zero lies outside the observed exposure support.
+IE(0), even when zero lies outside the observed support of the independent variable.
 
 {pstd}
 Observations missing any model variable, control, fixed effect, or cluster
@@ -240,7 +241,7 @@ Example with a generated dataset:
 
 {pstd}
 With panel data, replace the variable names in the following commands with
-the outcome, exposure, mediator, controls, and identifiers in your dataset:
+the outcome, independent variable, mediator, controls, and identifiers in your dataset:
 
 {phang2}{cmd:umediation y, x(x) mediator(m) controls(z) absorb(firm year) cluster(firm) reps(1999) seed(42)}{p_end}
 {phang2}{cmd:umediation y, x(x) mediator(m) controls(z) absorb(firm year) cluster(firm) inference(jackknife) wildreps(1999) seed(42)}{p_end}
@@ -272,7 +273,7 @@ An imbalanced G=10, N=400 design produced 91.15% coverage for the nominal
 95% four-component region (2,000 outer replications). WCR-S had no detected
 reversals under the evaluated high-leverage alternative. Few clusters,
 unequal cluster influence, weak paths, heavy tails, and roots near the
-research-interval boundary can impair inference. There is no universal safe
+boundary of the selected data range can impair inference. There is no universal safe
 cluster-count threshold. Increasing bootstrap repetitions improves simulation
 precision without correcting design-related distortions. The validation
 materials accompanying the source describe the simulation settings and uncertainty.
@@ -304,8 +305,8 @@ clustering are outside the implemented model.
 {synopt:{cmd:e(V)}}pairs or centered cluster-deletion covariance of the stored estimands{p_end}
 {synopt:{cmd:e(ci)}}lower and upper confidence limits, with columns matching e(b){p_end}
 {synopt:{cmd:e(table)}}rows matching e(b); estimate, method-specific SE, ci_lower, ci_upper{p_end}
-{synopt:{cmd:e(at)}}fixed exposure positions for ie1, ...{p_end}
-{synopt:{cmd:e(range)}}lower and upper research-interval endpoints{p_end}
+{synopt:{cmd:e(at)}}fixed evaluation values for ie1, ...{p_end}
+{synopt:{cmd:e(range)}}lower and upper endpoints of the selected data range{p_end}
 {synopt:{cmd:e(grid)}}101 rows; x, ie, method-specific SE, point_lower, point_upper, sim_lower, sim_upper{p_end}
 {synopt:{cmd:e(iut)}}rows posneg and negpos; left_bound, right_bound, alpha, reject{p_end}
 {synopt:{cmd:e(root_info)}}estimate, ci_lower, ci_upper, finite_reps, finite_share, inside, denominator_clear, path_clear{p_end}
@@ -360,7 +361,7 @@ gives a finite interval summary only when the projected set is bounded.
 {synopt:{cmd:e(version)}}1.0.0{p_end}
 {synopt:{cmd:e(release_status)}}first_release{p_end}
 {synopt:{cmd:e(calibration_status)}}not_uniformly_calibrated{p_end}
-{synopt:{cmd:e(depvar)}, {cmd:e(x)}}outcome and exposure names{p_end}
+{synopt:{cmd:e(depvar)}, {cmd:e(x)}}outcome and independent variable names{p_end}
 {synopt:{cmd:e(mediator)}}mediator name{p_end}
 {synopt:{cmd:e(controls)}}controls specification{p_end}
 {synopt:{cmd:e(absorb)}}fixed-effect identifiers{p_end}
@@ -383,7 +384,7 @@ gives a finite interval summary only when the projected set is bounded.
 {p2colreset}{...}
 
 {marker methods}{...}
-{title:Methods and references}
+{title:Methods}
 
 {pstd}{bf:Pairs bootstrap}
 
@@ -446,13 +447,6 @@ this factor cancels in the observed/bootstrap t comparison.
 The wild procedure supplies linear-component tests combined for reversal.
 Product confidence intervals and an adaptive bootstrap for double-zero
 mediation nulls are outside this implementation.
-
-{pstd}{bf:References}
-
-{phang}
-MacKinnon, J. G., M. O. Nielsen, and M. D. Webb. 2023.
-Fast and reliable jackknife and bootstrap methods for cluster-robust inference.
-{browse "https://arxiv.org/abs/2301.04527":arXiv:2301.04527}.
 
 {marker author}{...}
 {title:Author and contact}

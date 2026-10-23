@@ -377,7 +377,7 @@ program define _umediation_work, rclass
         local U : word 2 of `range'
     }
     if `L' >= `U' | missing(`L',`U') {
-        di as error "the research interval must have two distinct finite endpoints"
+        di as error "the data range must have two distinct finite endpoints"
         exit 459
     }
     if `L' < `xmin' | `U' > `xmax' {
@@ -676,7 +676,7 @@ program define _umediation_display
         as text "   Fits valid/requested: " as result e(reps_valid) "/" e(reps_requested)
     if "`e(absorb)'" != "" di as text "Fixed effects: " as result "`e(absorb)'"
     if "`e(cluster)'" != "" di as text "Resampling clusters: " as result "`e(cluster)' (" e(N_clust) ")"
-    di as text "Research interval: [" as result %10.5g `Q'[1,1] as text ", " ///
+    di as text "Data range: [" as result %10.5g `Q'[1,1] as text ", " ///
         as result %10.5g `Q'[1,2] as text "]   Direction: " as result "`e(direction)'"
     di ""
     di as text "Inference: " as result "`e(inference)'"

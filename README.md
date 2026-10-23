@@ -1,10 +1,10 @@
 # Umediation
 
-Mediation analysis with a quadratic exposure-to-mediator relationship in Stata.
+Mediation with a quadratic relationship between the independent variable and mediator in Stata.
 
 Version 1.0.0.
 
-Umediation fits a quadratic X-to-M path and a linear M-to-Y path on a common sample. It estimates the local indirect effect `IE(x) = b(a1 + 2a2x)`, decomposes outcome curvature into mediated and direct components, and assesses sign reversals over a specified exposure interval.
+Umediation fits two regression equations on a common sample. The mediator equation includes linear and squared terms of the independent variable; the outcome equation includes these terms and the mediator. It estimates the local indirect effect `IE(x) = b(a1 + 2a2x)`, decomposes outcome curvature into mediated and direct components, and assesses sign reversals over a selected data range.
 
 ## Features and requirements
 
@@ -43,7 +43,7 @@ The example preserves the existing data and random-number state. Its default 199
 
 ## Basic use
 
-For an outcome `y`, exposure `x`, mediator `m`, control `z`, firm identifier `firm`, and year identifier `year`:
+For an outcome `y`, independent variable `x`, mediator `m`, control `z`, firm identifier `firm`, and year identifier `year`:
 
 ```stata
 umediation y, x(x) mediator(m) controls(z) absorb(firm year) cluster(firm) ///
@@ -60,21 +60,21 @@ matrix list e(wild_reversal)
 matrix list e(root_set)
 ```
 
-The primary inference method determines `e(ci)` and `e(classification)`. The optional wild test reports separate p-values and leaves those results unchanged. The default evaluation positions are the 5th, 25th, 50th, 75th, and 95th exposure percentiles; the default research interval spans the 5th to 95th percentiles. These positions are fixed across replications. See `help umediation` for all options, stored results, and methods.
+The primary inference method determines `e(ci)` and `e(classification)`. The optional wild test reports separate p-values and leaves those results unchanged. The default evaluation values are the 5th, 25th, 50th, 75th, and 95th percentiles of the independent variable; the default data range spans its 5th to 95th percentiles. These positions are fixed across replications. See `help umediation` for all options, stored results, and methods.
 
 ## Interpretation and validation
 
 Coverage and reversal error rates depend on the design. Pairs inference can under-cover and produce excess false reversals with few or imbalanced clusters. Jackknife projection and the wild branch test are experimental inference procedures. Projection intervals can be highly conservative. The four-component confidence region may under-cover when clusters are imbalanced, and high leverage can substantially reduce power. Weak paths and roots near the interval boundary are also difficult. Increasing bootstrap repetitions improves simulation precision without resolving these issues.
 
-Choose the research interval, direction, and primary method before inspecting results. A root estimate inside the interval alone does not establish a reversal, and failure to detect a reversal does not establish its absence. Fixed effects do not by themselves identify a causal mediation effect.
+Choose the data range, direction, and primary method before inspecting results. A root estimate inside the interval alone does not establish a reversal, and failure to detect a reversal does not establish its absence. Fixed effects do not by themselves identify a causal mediation effect.
 
 The [validation documentation](validation/README.md) gives simulation results, reproducibility instructions, and implementation checks. Tests were run on Windows with Stata/MP 17. Other operating systems and Stata versions have not been tested. The statistical limitations apply independently of the software version number.
 
 ## Citation
 
-SUN, Huijie. Umediation: Mediation with a quadratic exposure-to-mediator relationship in Stata. Version 1.0.0. University of Science and Technology of China.
+SUN, Huijie. Umediation: Mediation with a quadratic relationship between the independent variable and mediator in Stata. Version 1.0.0. University of Science and Technology of China.
 
-Machine-readable citation information is provided in [CITATION.cff](CITATION.cff). Cite the inference methods used alongside the software; references are listed in the help file.
+Machine-readable citation information is provided in [CITATION.cff](CITATION.cff).
 
 ## Author
 

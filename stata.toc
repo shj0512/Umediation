@@ -1,4 +1,4 @@
 v 3
 d Umediation
 d Huijie SUN, University of Science and Technology of China
-p umediation Mediation with a quadratic exposure-to-mediator relationship
+p umediation Mediation with a quadratic relationship between the independent variable and mediator

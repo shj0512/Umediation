@@ -10,7 +10,7 @@ From the source root, run in Stata 17 or later:
 do validation/check.do
 ```
 
-The script uses synthetic data. It checks coefficients against explicit dummy-variable least squares; fixed effects and factor controls; reproducibility; separation of primary and wild inference; exposure translation; numeric and string identifiers; root-set edge cases; finite-support enumeration; handling of failed deletions; output-path collisions; preservation of data, frames, and random-number state; help rendering; and the standalone example. It writes results to `validation/output/` and clears the session at the start. Run it in a separate Stata session.
+The script uses synthetic data. It checks coefficients against explicit dummy-variable least squares; fixed effects and factor controls; reproducibility; separation of primary and wild inference; translation of the independent variable; numeric and string identifiers; root-set edge cases; finite-support enumeration; handling of failed deletions; output-path collisions; preservation of data, frames, and random-number state; help rendering; and the standalone example. It writes results to `validation/output/` and clears the session at the start. Run it in a separate Stata session.
 
 All numerical matrices, saved draw datasets, and classifications were also compared with the reference calculation source in seven representative designs. All 17,730 compared numeric cells agreed exactly. This comparison covers observation bootstrap, clustered fixed effects, jackknife projection, WCR-S, WCR-C, and Webb and Rademacher enumeration.
 
@@ -34,7 +34,7 @@ At G=100, N=400, false reversal rates under b=0 were 6.30%, 1.32%, and 2.76%; re
 
 For the highly imbalanced G=10, N=400 design, with cluster sizes 220 and nine times 20, the nominal 95% four-component region covered 91.15% of the time (95% Monte Carlo interval 89.83% to 92.32%; 2,000 replications). High coverage for a projected product can coexist with undercoverage of the component region. In the high-leverage design, WCR-S had zero observed power under the regular alternative; projection power was 0.75%. Low false-positive rates in such a setting provide little evidence about useful power.
 
-The full design comprises 74 structural scenarios across 16 data strata. It includes weak individual paths, a double-zero null, roots inside, outside, and at the interval boundary, different cluster counts, unequal cluster sizes, heavy-tailed errors, and concentrated exposure information. Parameters and seeds are recorded in `design.json`.
+The full design comprises 74 structural scenarios across 16 data strata. It includes weak individual paths, a double-zero null, roots inside, outside, and at the interval boundary, different cluster counts, unequal cluster sizes, heavy-tailed errors, and concentrated variation in the independent variable. Parameters and seeds are recorded in `design.json`.
 
 The simulation phases share samples. The `precision` phase uses repetitions 1 to 5,000, including the first 2,000 used in overlapping core scenarios. The `screen` phase uses subsets of the same samples. Different structural paths are evaluated on common generated data through exact least-squares parameter translations. There are 41,000 distinct base samples and 614,000 method-by-scenario records; these counts do not represent 614,000 independent samples or native Stata calls. Phase comparisons must account for this dependence.
 

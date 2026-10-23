@@ -2,7 +2,7 @@
 
 First public release.
 
-Umediation estimates local indirect effects for a quadratic exposure-to-mediator path and a linear mediator-to-outcome path. It supports common controls, fixed effects, pairs bootstrap inference, cluster jackknife projection, and a separate wild cluster bootstrap reversal test. `umediationplot` displays local effects and confidence limits.
+Umediation estimates local indirect effects when the mediator equation is quadratic in the independent variable and the outcome equation is linear in the mediator. It supports common controls, fixed effects, pairs bootstrap inference, cluster jackknife projection, and a separate wild cluster bootstrap reversal test. `umediationplot` displays local effects and confidence limits.
 
 Requires Stata 17 or later; no external packages are needed. Installation:
 
