@@ -1,0 +1,7008 @@
+{
+  "version": "1.0.0",
+  "seed": 20261021,
+  "alpha": 0.05,
+  "range": [
+    -1.5,
+    1.5
+  ],
+  "strata": [
+    {
+      "id": 1,
+      "name": "iid250",
+      "n": 250,
+      "g": 0,
+      "t": 0,
+      "error": "iid",
+      "year_fe": false
+    },
+    {
+      "id": 2,
+      "name": "iid1000",
+      "n": 1000,
+      "g": 0,
+      "t": 0,
+      "error": "iid",
+      "year_fe": false
+    },
+    {
+      "id": 3,
+      "name": "iid_hetero",
+      "n": 500,
+      "g": 0,
+      "t": 0,
+      "error": "hetero",
+      "year_fe": false
+    },
+    {
+      "id": 4,
+      "name": "g100",
+      "n": 800,
+      "g": 100,
+      "t": 8,
+      "error": "ar1",
+      "year_fe": true
+    },
+    {
+      "id": 5,
+      "name": "g30",
+      "n": 240,
+      "g": 30,
+      "t": 8,
+      "error": "ar1",
+      "year_fe": true
+    },
+    {
+      "id": 6,
+      "name": "g10",
+      "n": 80,
+      "g": 10,
+      "t": 8,
+      "error": "ar1",
+      "year_fe": true
+    },
+    {
+      "id": 7,
+      "name": "g5",
+      "n": 40,
+      "g": 5,
+      "t": 8,
+      "error": "ar1",
+      "year_fe": true
+    },
+    {
+      "id": 8,
+      "name": "g10_unbalanced",
+      "n": 0,
+      "g": 10,
+      "t": 0,
+      "error": "ar1",
+      "year_fe": false
+    },
+    {
+      "id": 9,
+      "name": "g30_t3",
+      "n": 240,
+      "g": 30,
+      "t": 8,
+      "error": "t3_ar1",
+      "year_fe": true
+    },
+    {
+      "id": 10,
+      "name": "g5_n400",
+      "n": 400,
+      "g": 5,
+      "t": 80,
+      "error": "ar1",
+      "year_fe": false
+    },
+    {
+      "id": 11,
+      "name": "g100_n400",
+      "n": 400,
+      "g": 100,
+      "t": 4,
+      "error": "ar1",
+      "year_fe": false
+    },
+    {
+      "id": 12,
+      "name": "g10_n400",
+      "n": 400,
+      "g": 10,
+      "t": 40,
+      "error": "ar1",
+      "year_fe": false,
+      "extension": true
+    },
+    {
+      "id": 13,
+      "name": "g20_n400",
+      "n": 400,
+      "g": 20,
+      "t": 20,
+      "error": "ar1",
+      "year_fe": false,
+      "extension": true
+    },
+    {
+      "id": 14,
+      "name": "g50_n400",
+      "n": 400,
+      "g": 50,
+      "t": 8,
+      "error": "ar1",
+      "year_fe": false,
+      "extension": true
+    },
+    {
+      "id": 15,
+      "name": "g10_imbalanced400",
+      "n": 400,
+      "g": 10,
+      "t": 40,
+      "error": "ar1",
+      "year_fe": false,
+      "extension": true,
+      "imbalance": true
+    },
+    {
+      "id": 16,
+      "name": "g10_leverage400",
+      "n": 400,
+      "g": 10,
+      "t": 40,
+      "error": "ar1",
+      "year_fe": false,
+      "extension": true,
+      "leverage": true
+    }
+  ],
+  "cases": [
+    {
+      "id": "iid250__regular",
+      "stratum": "iid250",
+      "case": "regular",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "iid250__negative_b",
+      "stratum": "iid250",
+      "case": "negative_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": -0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "iid250__linear",
+      "stratum": "iid250",
+      "case": "linear",
+      "a1": 0.5,
+      "a2": 0.0,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "iid250__zero_b",
+      "stratum": "iid250",
+      "case": "zero_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.0,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "iid250__double_zero",
+      "stratum": "iid250",
+      "case": "double_zero",
+      "a1": 0.0,
+      "a2": 0.0,
+      "b": 0.0,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "iid250__zero_first",
+      "stratum": "iid250",
+      "case": "zero_first",
+      "a1": 0.0,
+      "a2": 0.0,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "iid250__weak_a2",
+      "stratum": "iid250",
+      "case": "weak_a2",
+      "a1": 0.03,
+      "a2": -0.03,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "iid250__weak_b",
+      "stratum": "iid250",
+      "case": "weak_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.05,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "iid250__both_weak",
+      "stratum": "iid250",
+      "case": "both_weak",
+      "a1": 0.03,
+      "a2": -0.03,
+      "b": 0.05,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "iid250__near_inside",
+      "stratum": "iid250",
+      "case": "near_inside",
+      "a1": 0.725,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "iid250__boundary",
+      "stratum": "iid250",
+      "case": "boundary",
+      "a1": 0.75,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "iid250__near_outside",
+      "stratum": "iid250",
+      "case": "near_outside",
+      "a1": 0.775,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "iid250__far_outside",
+      "stratum": "iid250",
+      "case": "far_outside",
+      "a1": 1.0,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "iid1000__regular",
+      "stratum": "iid1000",
+      "case": "regular",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "iid1000__weak_b",
+      "stratum": "iid1000",
+      "case": "weak_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.05,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "iid1000__double_zero",
+      "stratum": "iid1000",
+      "case": "double_zero",
+      "a1": 0.0,
+      "a2": 0.0,
+      "b": 0.0,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "iid1000__boundary",
+      "stratum": "iid1000",
+      "case": "boundary",
+      "a1": 0.75,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "iid_hetero__regular",
+      "stratum": "iid_hetero",
+      "case": "regular",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "iid_hetero__boundary",
+      "stratum": "iid_hetero",
+      "case": "boundary",
+      "a1": 0.75,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "iid_hetero__zero_b",
+      "stratum": "iid_hetero",
+      "case": "zero_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.0,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g100__regular",
+      "stratum": "g100",
+      "case": "regular",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g100__boundary",
+      "stratum": "g100",
+      "case": "boundary",
+      "a1": 0.75,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g100__weak_b",
+      "stratum": "g100",
+      "case": "weak_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.05,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g30__regular",
+      "stratum": "g30",
+      "case": "regular",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g30__weak_a2",
+      "stratum": "g30",
+      "case": "weak_a2",
+      "a1": 0.03,
+      "a2": -0.03,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g30__weak_b",
+      "stratum": "g30",
+      "case": "weak_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.05,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g30__both_weak",
+      "stratum": "g30",
+      "case": "both_weak",
+      "a1": 0.03,
+      "a2": -0.03,
+      "b": 0.05,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g30__double_zero",
+      "stratum": "g30",
+      "case": "double_zero",
+      "a1": 0.0,
+      "a2": 0.0,
+      "b": 0.0,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g30__boundary",
+      "stratum": "g30",
+      "case": "boundary",
+      "a1": 0.75,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g30__near_inside",
+      "stratum": "g30",
+      "case": "near_inside",
+      "a1": 0.725,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g30__near_outside",
+      "stratum": "g30",
+      "case": "near_outside",
+      "a1": 0.775,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g30__linear",
+      "stratum": "g30",
+      "case": "linear",
+      "a1": 0.5,
+      "a2": 0.0,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g30__zero_b",
+      "stratum": "g30",
+      "case": "zero_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.0,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g10__regular",
+      "stratum": "g10",
+      "case": "regular",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g10__weak_b",
+      "stratum": "g10",
+      "case": "weak_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.05,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g10__near_inside",
+      "stratum": "g10",
+      "case": "near_inside",
+      "a1": 0.725,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g10__boundary",
+      "stratum": "g10",
+      "case": "boundary",
+      "a1": 0.75,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g10__near_outside",
+      "stratum": "g10",
+      "case": "near_outside",
+      "a1": 0.775,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g10__double_zero",
+      "stratum": "g10",
+      "case": "double_zero",
+      "a1": 0.0,
+      "a2": 0.0,
+      "b": 0.0,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g5__regular",
+      "stratum": "g5",
+      "case": "regular",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g5__boundary",
+      "stratum": "g5",
+      "case": "boundary",
+      "a1": 0.75,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g5__double_zero",
+      "stratum": "g5",
+      "case": "double_zero",
+      "a1": 0.0,
+      "a2": 0.0,
+      "b": 0.0,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g10_unbalanced__regular",
+      "stratum": "g10_unbalanced",
+      "case": "regular",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g10_unbalanced__boundary",
+      "stratum": "g10_unbalanced",
+      "case": "boundary",
+      "a1": 0.75,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g10_unbalanced__near_outside",
+      "stratum": "g10_unbalanced",
+      "case": "near_outside",
+      "a1": 0.775,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g30_t3__regular",
+      "stratum": "g30_t3",
+      "case": "regular",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g30_t3__boundary",
+      "stratum": "g30_t3",
+      "case": "boundary",
+      "a1": 0.75,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g30_t3__weak_b",
+      "stratum": "g30_t3",
+      "case": "weak_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.05,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g5_n400__regular",
+      "stratum": "g5_n400",
+      "case": "regular",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g5_n400__boundary",
+      "stratum": "g5_n400",
+      "case": "boundary",
+      "a1": 0.75,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g5_n400__zero_b",
+      "stratum": "g5_n400",
+      "case": "zero_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.0,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g100_n400__regular",
+      "stratum": "g100_n400",
+      "case": "regular",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g100_n400__boundary",
+      "stratum": "g100_n400",
+      "case": "boundary",
+      "a1": 0.75,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g100_n400__zero_b",
+      "stratum": "g100_n400",
+      "case": "zero_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.0,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g100__zero_b",
+      "stratum": "g100",
+      "case": "zero_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.0,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g10__zero_b",
+      "stratum": "g10",
+      "case": "zero_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.0,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g5__zero_b",
+      "stratum": "g5",
+      "case": "zero_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.0,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g10_unbalanced__zero_b",
+      "stratum": "g10_unbalanced",
+      "case": "zero_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.0,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g30_t3__zero_b",
+      "stratum": "g30_t3",
+      "case": "zero_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.0,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g10_n400__regular",
+      "stratum": "g10_n400",
+      "case": "regular",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g10_n400__zero_b",
+      "stratum": "g10_n400",
+      "case": "zero_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.0,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g10_n400__boundary",
+      "stratum": "g10_n400",
+      "case": "boundary",
+      "a1": 0.75,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g20_n400__regular",
+      "stratum": "g20_n400",
+      "case": "regular",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g20_n400__zero_b",
+      "stratum": "g20_n400",
+      "case": "zero_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.0,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g20_n400__boundary",
+      "stratum": "g20_n400",
+      "case": "boundary",
+      "a1": 0.75,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g50_n400__regular",
+      "stratum": "g50_n400",
+      "case": "regular",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g50_n400__zero_b",
+      "stratum": "g50_n400",
+      "case": "zero_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.0,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g50_n400__boundary",
+      "stratum": "g50_n400",
+      "case": "boundary",
+      "a1": 0.75,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g10_imbalanced400__regular",
+      "stratum": "g10_imbalanced400",
+      "case": "regular",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g10_imbalanced400__zero_b",
+      "stratum": "g10_imbalanced400",
+      "case": "zero_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.0,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g10_imbalanced400__boundary",
+      "stratum": "g10_imbalanced400",
+      "case": "boundary",
+      "a1": 0.75,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g10_leverage400__regular",
+      "stratum": "g10_leverage400",
+      "case": "regular",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g10_leverage400__zero_b",
+      "stratum": "g10_leverage400",
+      "case": "zero_b",
+      "a1": 0.25,
+      "a2": -0.25,
+      "b": 0.0,
+      "c1": 0.15,
+      "c2": 0.1
+    },
+    {
+      "id": "g10_leverage400__boundary",
+      "stratum": "g10_leverage400",
+      "case": "boundary",
+      "a1": 0.75,
+      "a2": -0.25,
+      "b": 0.6,
+      "c1": 0.15,
+      "c2": 0.1
+    }
+  ],
+  "jobs": [
+    {
+      "phase": "core",
+      "stratum": "iid250",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid250",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid250",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid250",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid250",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid250",
+      "start": 501,
+      "stop": 600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid250",
+      "start": 601,
+      "stop": 700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid250",
+      "start": 701,
+      "stop": 800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid250",
+      "start": 801,
+      "stop": 900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid250",
+      "start": 901,
+      "stop": 1000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid250",
+      "start": 1001,
+      "stop": 1100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid250",
+      "start": 1101,
+      "stop": 1200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid250",
+      "start": 1201,
+      "stop": 1300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid250",
+      "start": 1301,
+      "stop": 1400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid250",
+      "start": 1401,
+      "stop": 1500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid250",
+      "start": 1501,
+      "stop": 1600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid250",
+      "start": 1601,
+      "stop": 1700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid250",
+      "start": 1701,
+      "stop": 1800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid250",
+      "start": 1801,
+      "stop": 1900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid250",
+      "start": 1901,
+      "stop": 2000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid1000",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid1000",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid1000",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid1000",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid1000",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid1000",
+      "start": 501,
+      "stop": 600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid1000",
+      "start": 601,
+      "stop": 700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid1000",
+      "start": 701,
+      "stop": 800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid1000",
+      "start": 801,
+      "stop": 900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid1000",
+      "start": 901,
+      "stop": 1000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid1000",
+      "start": 1001,
+      "stop": 1100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid1000",
+      "start": 1101,
+      "stop": 1200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid1000",
+      "start": 1201,
+      "stop": 1300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid1000",
+      "start": 1301,
+      "stop": 1400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid1000",
+      "start": 1401,
+      "stop": 1500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid1000",
+      "start": 1501,
+      "stop": 1600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid1000",
+      "start": 1601,
+      "stop": 1700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid1000",
+      "start": 1701,
+      "stop": 1800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid1000",
+      "start": 1801,
+      "stop": 1900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid1000",
+      "start": 1901,
+      "stop": 2000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid_hetero",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid_hetero",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid_hetero",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid_hetero",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid_hetero",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid_hetero",
+      "start": 501,
+      "stop": 600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid_hetero",
+      "start": 601,
+      "stop": 700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid_hetero",
+      "start": 701,
+      "stop": 800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid_hetero",
+      "start": 801,
+      "stop": 900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid_hetero",
+      "start": 901,
+      "stop": 1000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid_hetero",
+      "start": 1001,
+      "stop": 1100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid_hetero",
+      "start": 1101,
+      "stop": 1200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid_hetero",
+      "start": 1201,
+      "stop": 1300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid_hetero",
+      "start": 1301,
+      "stop": 1400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid_hetero",
+      "start": 1401,
+      "stop": 1500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid_hetero",
+      "start": 1501,
+      "stop": 1600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid_hetero",
+      "start": 1601,
+      "stop": 1700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid_hetero",
+      "start": 1701,
+      "stop": 1800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid_hetero",
+      "start": 1801,
+      "stop": 1900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "iid_hetero",
+      "start": 1901,
+      "stop": 2000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100",
+      "start": 501,
+      "stop": 600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100",
+      "start": 601,
+      "stop": 700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100",
+      "start": 701,
+      "stop": 800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100",
+      "start": 801,
+      "stop": 900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100",
+      "start": 901,
+      "stop": 1000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100",
+      "start": 1001,
+      "stop": 1100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100",
+      "start": 1101,
+      "stop": 1200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100",
+      "start": 1201,
+      "stop": 1300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100",
+      "start": 1301,
+      "stop": 1400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100",
+      "start": 1401,
+      "stop": 1500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100",
+      "start": 1501,
+      "stop": 1600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100",
+      "start": 1601,
+      "stop": 1700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100",
+      "start": 1701,
+      "stop": 1800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100",
+      "start": 1801,
+      "stop": 1900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100",
+      "start": 1901,
+      "stop": 2000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30",
+      "start": 501,
+      "stop": 600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30",
+      "start": 601,
+      "stop": 700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30",
+      "start": 701,
+      "stop": 800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30",
+      "start": 801,
+      "stop": 900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30",
+      "start": 901,
+      "stop": 1000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30",
+      "start": 1001,
+      "stop": 1100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30",
+      "start": 1101,
+      "stop": 1200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30",
+      "start": 1201,
+      "stop": 1300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30",
+      "start": 1301,
+      "stop": 1400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30",
+      "start": 1401,
+      "stop": 1500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30",
+      "start": 1501,
+      "stop": 1600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30",
+      "start": 1601,
+      "stop": 1700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30",
+      "start": 1701,
+      "stop": 1800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30",
+      "start": 1801,
+      "stop": 1900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30",
+      "start": 1901,
+      "stop": 2000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10",
+      "start": 501,
+      "stop": 600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10",
+      "start": 601,
+      "stop": 700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10",
+      "start": 701,
+      "stop": 800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10",
+      "start": 801,
+      "stop": 900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10",
+      "start": 901,
+      "stop": 1000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10",
+      "start": 1001,
+      "stop": 1100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10",
+      "start": 1101,
+      "stop": 1200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10",
+      "start": 1201,
+      "stop": 1300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10",
+      "start": 1301,
+      "stop": 1400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10",
+      "start": 1401,
+      "stop": 1500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10",
+      "start": 1501,
+      "stop": 1600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10",
+      "start": 1601,
+      "stop": 1700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10",
+      "start": 1701,
+      "stop": 1800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10",
+      "start": 1801,
+      "stop": 1900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10",
+      "start": 1901,
+      "stop": 2000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5",
+      "start": 501,
+      "stop": 600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5",
+      "start": 601,
+      "stop": 700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5",
+      "start": 701,
+      "stop": 800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5",
+      "start": 801,
+      "stop": 900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5",
+      "start": 901,
+      "stop": 1000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5",
+      "start": 1001,
+      "stop": 1100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5",
+      "start": 1101,
+      "stop": 1200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5",
+      "start": 1201,
+      "stop": 1300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5",
+      "start": 1301,
+      "stop": 1400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5",
+      "start": 1401,
+      "stop": 1500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5",
+      "start": 1501,
+      "stop": 1600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5",
+      "start": 1601,
+      "stop": 1700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5",
+      "start": 1701,
+      "stop": 1800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5",
+      "start": 1801,
+      "stop": 1900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5",
+      "start": 1901,
+      "stop": 2000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10_unbalanced",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10_unbalanced",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10_unbalanced",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10_unbalanced",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10_unbalanced",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10_unbalanced",
+      "start": 501,
+      "stop": 600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10_unbalanced",
+      "start": 601,
+      "stop": 700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10_unbalanced",
+      "start": 701,
+      "stop": 800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10_unbalanced",
+      "start": 801,
+      "stop": 900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10_unbalanced",
+      "start": 901,
+      "stop": 1000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10_unbalanced",
+      "start": 1001,
+      "stop": 1100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10_unbalanced",
+      "start": 1101,
+      "stop": 1200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10_unbalanced",
+      "start": 1201,
+      "stop": 1300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10_unbalanced",
+      "start": 1301,
+      "stop": 1400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10_unbalanced",
+      "start": 1401,
+      "stop": 1500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10_unbalanced",
+      "start": 1501,
+      "stop": 1600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10_unbalanced",
+      "start": 1601,
+      "stop": 1700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10_unbalanced",
+      "start": 1701,
+      "stop": 1800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10_unbalanced",
+      "start": 1801,
+      "stop": 1900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g10_unbalanced",
+      "start": 1901,
+      "stop": 2000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30_t3",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30_t3",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30_t3",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30_t3",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30_t3",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30_t3",
+      "start": 501,
+      "stop": 600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30_t3",
+      "start": 601,
+      "stop": 700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30_t3",
+      "start": 701,
+      "stop": 800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30_t3",
+      "start": 801,
+      "stop": 900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30_t3",
+      "start": 901,
+      "stop": 1000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30_t3",
+      "start": 1001,
+      "stop": 1100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30_t3",
+      "start": 1101,
+      "stop": 1200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30_t3",
+      "start": 1201,
+      "stop": 1300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30_t3",
+      "start": 1301,
+      "stop": 1400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30_t3",
+      "start": 1401,
+      "stop": 1500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30_t3",
+      "start": 1501,
+      "stop": 1600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30_t3",
+      "start": 1601,
+      "stop": 1700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30_t3",
+      "start": 1701,
+      "stop": 1800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30_t3",
+      "start": 1801,
+      "stop": 1900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g30_t3",
+      "start": 1901,
+      "stop": 2000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5_n400",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5_n400",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5_n400",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5_n400",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5_n400",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5_n400",
+      "start": 501,
+      "stop": 600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5_n400",
+      "start": 601,
+      "stop": 700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5_n400",
+      "start": 701,
+      "stop": 800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5_n400",
+      "start": 801,
+      "stop": 900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5_n400",
+      "start": 901,
+      "stop": 1000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5_n400",
+      "start": 1001,
+      "stop": 1100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5_n400",
+      "start": 1101,
+      "stop": 1200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5_n400",
+      "start": 1201,
+      "stop": 1300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5_n400",
+      "start": 1301,
+      "stop": 1400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5_n400",
+      "start": 1401,
+      "stop": 1500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5_n400",
+      "start": 1501,
+      "stop": 1600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5_n400",
+      "start": 1601,
+      "stop": 1700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5_n400",
+      "start": 1701,
+      "stop": 1800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5_n400",
+      "start": 1801,
+      "stop": 1900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g5_n400",
+      "start": 1901,
+      "stop": 2000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100_n400",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100_n400",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100_n400",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100_n400",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100_n400",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100_n400",
+      "start": 501,
+      "stop": 600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100_n400",
+      "start": 601,
+      "stop": 700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100_n400",
+      "start": 701,
+      "stop": 800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100_n400",
+      "start": 801,
+      "stop": 900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100_n400",
+      "start": 901,
+      "stop": 1000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100_n400",
+      "start": 1001,
+      "stop": 1100,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100_n400",
+      "start": 1101,
+      "stop": 1200,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100_n400",
+      "start": 1201,
+      "stop": 1300,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100_n400",
+      "start": 1301,
+      "stop": 1400,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100_n400",
+      "start": 1401,
+      "stop": 1500,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100_n400",
+      "start": 1501,
+      "stop": 1600,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100_n400",
+      "start": 1601,
+      "stop": 1700,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100_n400",
+      "start": 1701,
+      "stop": 1800,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100_n400",
+      "start": 1801,
+      "stop": 1900,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "core",
+      "stratum": "g100_n400",
+      "start": 1901,
+      "stop": 2000,
+      "B": 1999,
+      "wild": false,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g100",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g100",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g100",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g100",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g100",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g30",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g30",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g30",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g30",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g30",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g10",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g10",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g10",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g10",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g10",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g5",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g5",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g5",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g5",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g5",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g10_unbalanced",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g10_unbalanced",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g10_unbalanced",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g10_unbalanced",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g10_unbalanced",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g30_t3",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g30_t3",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g30_t3",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g30_t3",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g30_t3",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g5_n400",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g5_n400",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g5_n400",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g5_n400",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g5_n400",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g100_n400",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g100_n400",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g100_n400",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g100_n400",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "screen",
+      "stratum": "g100_n400",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": null
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_n400",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_n400",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_n400",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_n400",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_n400",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_n400",
+      "start": 501,
+      "stop": 600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_n400",
+      "start": 601,
+      "stop": 700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_n400",
+      "start": 701,
+      "stop": 800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_n400",
+      "start": 801,
+      "stop": 900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_n400",
+      "start": 901,
+      "stop": 1000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_n400",
+      "start": 1001,
+      "stop": 1100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_n400",
+      "start": 1101,
+      "stop": 1200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_n400",
+      "start": 1201,
+      "stop": 1300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_n400",
+      "start": 1301,
+      "stop": 1400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_n400",
+      "start": 1401,
+      "stop": 1500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_n400",
+      "start": 1501,
+      "stop": 1600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_n400",
+      "start": 1601,
+      "stop": 1700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_n400",
+      "start": 1701,
+      "stop": 1800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_n400",
+      "start": 1801,
+      "stop": 1900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_n400",
+      "start": 1901,
+      "stop": 2000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g20_n400",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g20_n400",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g20_n400",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g20_n400",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g20_n400",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g20_n400",
+      "start": 501,
+      "stop": 600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g20_n400",
+      "start": 601,
+      "stop": 700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g20_n400",
+      "start": 701,
+      "stop": 800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g20_n400",
+      "start": 801,
+      "stop": 900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g20_n400",
+      "start": 901,
+      "stop": 1000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g20_n400",
+      "start": 1001,
+      "stop": 1100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g20_n400",
+      "start": 1101,
+      "stop": 1200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g20_n400",
+      "start": 1201,
+      "stop": 1300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g20_n400",
+      "start": 1301,
+      "stop": 1400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g20_n400",
+      "start": 1401,
+      "stop": 1500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g20_n400",
+      "start": 1501,
+      "stop": 1600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g20_n400",
+      "start": 1601,
+      "stop": 1700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g20_n400",
+      "start": 1701,
+      "stop": 1800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g20_n400",
+      "start": 1801,
+      "stop": 1900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g20_n400",
+      "start": 1901,
+      "stop": 2000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g50_n400",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g50_n400",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g50_n400",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g50_n400",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g50_n400",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g50_n400",
+      "start": 501,
+      "stop": 600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g50_n400",
+      "start": 601,
+      "stop": 700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g50_n400",
+      "start": 701,
+      "stop": 800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g50_n400",
+      "start": 801,
+      "stop": 900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g50_n400",
+      "start": 901,
+      "stop": 1000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g50_n400",
+      "start": 1001,
+      "stop": 1100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g50_n400",
+      "start": 1101,
+      "stop": 1200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g50_n400",
+      "start": 1201,
+      "stop": 1300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g50_n400",
+      "start": 1301,
+      "stop": 1400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g50_n400",
+      "start": 1401,
+      "stop": 1500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g50_n400",
+      "start": 1501,
+      "stop": 1600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g50_n400",
+      "start": 1601,
+      "stop": 1700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g50_n400",
+      "start": 1701,
+      "stop": 1800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g50_n400",
+      "start": 1801,
+      "stop": 1900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g50_n400",
+      "start": 1901,
+      "stop": 2000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_imbalanced400",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_imbalanced400",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_imbalanced400",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_imbalanced400",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_imbalanced400",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_imbalanced400",
+      "start": 501,
+      "stop": 600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_imbalanced400",
+      "start": 601,
+      "stop": 700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_imbalanced400",
+      "start": 701,
+      "stop": 800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_imbalanced400",
+      "start": 801,
+      "stop": 900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_imbalanced400",
+      "start": 901,
+      "stop": 1000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_imbalanced400",
+      "start": 1001,
+      "stop": 1100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_imbalanced400",
+      "start": 1101,
+      "stop": 1200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_imbalanced400",
+      "start": 1201,
+      "stop": 1300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_imbalanced400",
+      "start": 1301,
+      "stop": 1400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_imbalanced400",
+      "start": 1401,
+      "stop": 1500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_imbalanced400",
+      "start": 1501,
+      "stop": 1600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_imbalanced400",
+      "start": 1601,
+      "stop": 1700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_imbalanced400",
+      "start": 1701,
+      "stop": 1800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_imbalanced400",
+      "start": 1801,
+      "stop": 1900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_imbalanced400",
+      "start": 1901,
+      "stop": 2000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_leverage400",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_leverage400",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_leverage400",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_leverage400",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_leverage400",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_leverage400",
+      "start": 501,
+      "stop": 600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_leverage400",
+      "start": 601,
+      "stop": 700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_leverage400",
+      "start": 701,
+      "stop": 800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_leverage400",
+      "start": 801,
+      "stop": 900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_leverage400",
+      "start": 901,
+      "stop": 1000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_leverage400",
+      "start": 1001,
+      "stop": 1100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_leverage400",
+      "start": 1101,
+      "stop": 1200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_leverage400",
+      "start": 1201,
+      "stop": 1300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_leverage400",
+      "start": 1301,
+      "stop": 1400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_leverage400",
+      "start": 1401,
+      "stop": 1500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_leverage400",
+      "start": 1501,
+      "stop": 1600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_leverage400",
+      "start": 1601,
+      "stop": 1700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_leverage400",
+      "start": 1701,
+      "stop": 1800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_leverage400",
+      "start": 1801,
+      "stop": 1900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "extensions",
+      "stratum": "g10_leverage400",
+      "start": 1901,
+      "stop": 2000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 501,
+      "stop": 600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 601,
+      "stop": 700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 701,
+      "stop": 800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 801,
+      "stop": 900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 901,
+      "stop": 1000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 1001,
+      "stop": 1100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 1101,
+      "stop": 1200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 1201,
+      "stop": 1300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 1301,
+      "stop": 1400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 1401,
+      "stop": 1500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 1501,
+      "stop": 1600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 1601,
+      "stop": 1700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 1701,
+      "stop": 1800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 1801,
+      "stop": 1900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 1901,
+      "stop": 2000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 2001,
+      "stop": 2100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 2101,
+      "stop": 2200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 2201,
+      "stop": 2300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 2301,
+      "stop": 2400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 2401,
+      "stop": 2500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 2501,
+      "stop": 2600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 2601,
+      "stop": 2700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 2701,
+      "stop": 2800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 2801,
+      "stop": 2900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 2901,
+      "stop": 3000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 3001,
+      "stop": 3100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 3101,
+      "stop": 3200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 3201,
+      "stop": 3300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 3301,
+      "stop": 3400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 3401,
+      "stop": 3500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 3501,
+      "stop": 3600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 3601,
+      "stop": 3700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 3701,
+      "stop": 3800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 3801,
+      "stop": 3900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 3901,
+      "stop": 4000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 4001,
+      "stop": 4100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 4101,
+      "stop": 4200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 4201,
+      "stop": 4300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 4301,
+      "stop": 4400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 4401,
+      "stop": 4500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 4501,
+      "stop": 4600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 4601,
+      "stop": 4700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 4701,
+      "stop": 4800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 4801,
+      "stop": 4900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g5_n400",
+      "start": 4901,
+      "stop": 5000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 501,
+      "stop": 600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 601,
+      "stop": 700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 701,
+      "stop": 800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 801,
+      "stop": 900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 901,
+      "stop": 1000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 1001,
+      "stop": 1100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 1101,
+      "stop": 1200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 1201,
+      "stop": 1300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 1301,
+      "stop": 1400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 1401,
+      "stop": 1500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 1501,
+      "stop": 1600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 1601,
+      "stop": 1700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 1701,
+      "stop": 1800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 1801,
+      "stop": 1900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 1901,
+      "stop": 2000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 2001,
+      "stop": 2100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 2101,
+      "stop": 2200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 2201,
+      "stop": 2300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 2301,
+      "stop": 2400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 2401,
+      "stop": 2500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 2501,
+      "stop": 2600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 2601,
+      "stop": 2700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 2701,
+      "stop": 2800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 2801,
+      "stop": 2900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 2901,
+      "stop": 3000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 3001,
+      "stop": 3100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 3101,
+      "stop": 3200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 3201,
+      "stop": 3300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 3301,
+      "stop": 3400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 3401,
+      "stop": 3500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 3501,
+      "stop": 3600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 3601,
+      "stop": 3700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 3701,
+      "stop": 3800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 3801,
+      "stop": 3900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 3901,
+      "stop": 4000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 4001,
+      "stop": 4100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 4101,
+      "stop": 4200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 4201,
+      "stop": 4300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 4301,
+      "stop": 4400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 4401,
+      "stop": 4500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 4501,
+      "stop": 4600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 4601,
+      "stop": 4700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 4701,
+      "stop": 4800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 4801,
+      "stop": 4900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g10_unbalanced",
+      "start": 4901,
+      "stop": 5000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 1,
+      "stop": 100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 101,
+      "stop": 200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 201,
+      "stop": 300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 301,
+      "stop": 400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 401,
+      "stop": 500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 501,
+      "stop": 600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 601,
+      "stop": 700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 701,
+      "stop": 800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 801,
+      "stop": 900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 901,
+      "stop": 1000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 1001,
+      "stop": 1100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 1101,
+      "stop": 1200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 1201,
+      "stop": 1300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 1301,
+      "stop": 1400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 1401,
+      "stop": 1500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 1501,
+      "stop": 1600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 1601,
+      "stop": 1700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 1701,
+      "stop": 1800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 1801,
+      "stop": 1900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 1901,
+      "stop": 2000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 2001,
+      "stop": 2100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 2101,
+      "stop": 2200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 2201,
+      "stop": 2300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 2301,
+      "stop": 2400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 2401,
+      "stop": 2500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 2501,
+      "stop": 2600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 2601,
+      "stop": 2700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 2701,
+      "stop": 2800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 2801,
+      "stop": 2900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 2901,
+      "stop": 3000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 3001,
+      "stop": 3100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 3101,
+      "stop": 3200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 3201,
+      "stop": 3300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 3301,
+      "stop": 3400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 3401,
+      "stop": 3500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 3501,
+      "stop": 3600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 3601,
+      "stop": 3700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 3701,
+      "stop": 3800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 3801,
+      "stop": 3900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 3901,
+      "stop": 4000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 4001,
+      "stop": 4100,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 4101,
+      "stop": 4200,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 4201,
+      "stop": 4300,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 4301,
+      "stop": 4400,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 4401,
+      "stop": 4500,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 4501,
+      "stop": 4600,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 4601,
+      "stop": 4700,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 4701,
+      "stop": 4800,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 4801,
+      "stop": 4900,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    },
+    {
+      "phase": "precision",
+      "stratum": "g100_n400",
+      "start": 4901,
+      "stop": 5000,
+      "B": 1999,
+      "wild": true,
+      "pairs": true,
+      "case_names": [
+        "regular",
+        "zero_b",
+        "boundary"
+      ]
+    }
+  ],
+  "assumptions": "Independent clusters; homogeneous structural paths; original exogenous-error DGPs. No claim of causal identification from this validation.",
+  "reuse": "Methods use common outer samples and common wild schedules. Precision runs include repetitions 1..2000 from the core runs; screen runs are subsets. Phases are not independent replications."
+}

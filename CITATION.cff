@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Please cite Umediation and the inference methods used in your analysis."
+type: software
+title: "Umediation: Mediation with a quadratic exposure-to-mediator relationship in Stata"
+version: 1.0.0
+license: MIT
+authors:
+  - family-names: SUN
+    given-names: Huijie
+    affiliation: University of Science and Technology of China
+    email: shj0512@mail.ustc.edu.cn
+    website: https://github.com/shj0512
+repository-code: https://github.com/shj0512/Umediation
+keywords:
+  - Stata
+  - mediation
+  - quadratic regression
+  - fixed effects
+  - cluster bootstrap

@@ -1,0 +1,15 @@
+v 3
+d Umediation: Mediation with a quadratic exposure-to-mediator relationship
+d Version 1.0.0
+d Author: Huijie SUN
+d Affiliation: University of Science and Technology of China
+d Support: shj0512@mail.ustc.edu.cn
+d Requires: Stata version 17; no additional packages
+d Distribution-Date: 20261023
+d License: MIT
+f umediation.ado
+f umediation.sthlp
+f umediationplot.ado
+f umediationplot.sthlp
+f umediation_example.do
+f LICENSE

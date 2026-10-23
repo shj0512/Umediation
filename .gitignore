@@ -1,0 +1,8 @@
+*.log
+*.smcl
+*.gph
+__pycache__/
+validation/output/
+validation/results/
+.DS_Store
+Thumbs.db
